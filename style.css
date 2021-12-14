@@ -1,0 +1,43 @@
+.box {
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(230, 78, 78);
+    font-size: 18px;
+    transition-property: background-color font-size transform color;
+    transition-timing-function: ease-in-out;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+    /*border:1px solid green;*/
+}
+  
+.transformed-state {
+    transform: rotate(360deg);
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 18px;
+    transition-property: background-color font-size transform color;
+    transition-timing-function: ease-in-out;
+}
+  
+.duration {
+    transition-duration: 0.5s;
+}
+
+.back {
+    width: 1000px;
+    height: 1000px;
+    background-image: url(background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.oneUp {
+    background-image: url(1up.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
