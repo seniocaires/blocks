@@ -1,11 +1,12 @@
 var lifes = [];
 function change(e) {
-    e.target.classList.toggle("transformed-state");
     e.target.removeEventListener('click', change, false);
+    e.target.classList.toggle("transformed-state");
     e.target.innerHTML = '&nbsp;';
     let oneUp = '';
     if (lifes.includes(e.target.id)) {
-        e.target.classList.toggle('oneUP');
+        e.target.classList.toggle('oneUp');
+    } else {
     }
 }
 
@@ -18,7 +19,7 @@ do {
         lifes.push(life);
         lifeSortEnd++;
     }
-} while(lifeSortEnd < 5);
+} while (lifeSortEnd < 5);
 
 const board = document.getElementById('board');
 for (let line = 1; line <= 10; line++) {
