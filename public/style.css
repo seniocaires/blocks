@@ -1,3 +1,15 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+ 
+#intro{
+    background-color: #525df1;
+    color: #FFFFFF;
+    height: 5%;	
+} 
+
 .box {
     margin: 0px;
     padding: 0px;
@@ -40,4 +52,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.invisible {
+    display: none;
 }
