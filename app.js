@@ -15,6 +15,7 @@ app.get('/', (req, res) => {
 });
 
 var clients = {};
+var clicked = [];
 
 io.on('connection', (socket) => {
     console.log('new user connected');
@@ -24,6 +25,7 @@ io.on('connection', (socket) => {
             console.log("Joined: " + name);
             clients[socket.id] = name;
             socket.emit("update-users", (clients));
+            socket.emit("start-board", (clicked));
             socket.broadcast.emit("update-users", (clients))
         }
     });
@@ -33,6 +35,7 @@ io.on('connection', (socket) => {
         let message = {};
         message.user = clients[socket.id];
         message.block = msg;
+        clicked.push(msg);
         socket.broadcast.emit("update-board", (message));
     });
 

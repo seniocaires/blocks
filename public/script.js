@@ -56,6 +56,16 @@ function updateBoard(msg) {
     }
 }
 
+function startBoard(msg) {
+    for (clicked of msg) {
+        document.getElementById(clicked).classList.toggle("transformed-state");
+        document.getElementById(clicked).innerHTML = '&nbsp;';
+        if (lifes.includes(clicked)) {
+            document.getElementById(clicked).classList.toggle('oneUp');
+        }
+    }
+}
+
 function updateUsers(users) {
     console.dir(users);
     let usersString = '';
@@ -95,6 +105,10 @@ socket.on("update-users", function (users) {
 
 socket.on("update-board", function (msg) {
     updateBoard(msg);
+});
+
+socket.on("start-board", function (msg) {
+    startBoard(msg);
 });
 
 socket.on("disconnect", function (msg) {
